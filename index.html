@@ -1,0 +1,526 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NEXUS — Future of Dining</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Animated Background -->
+    <div class="particles"></div>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <div class="logo">
+            NEXUS<span>.</span>
+        </div>
+
+        <nav id="navMenu">
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#experience">Experience</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <button class="cart-btn" onclick="openCart()">
+            🛒 <span id="cartCount">0</span>
+        </button>
+
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="eyebrow">WELCOME TO THE FUTURE</p>
+
+            <h1>
+                TASTE THE
+                <span>FUTURE.</span>
+            </h1>
+
+            <p class="hero-text">
+                An immersive dining experience where advanced technology
+                meets extraordinary cuisine.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#menu" class="primary-btn">
+                    Explore Menu →
+                </a>
+
+                <a href="#booking" class="secondary-btn">
+                    Reserve Table
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-orb">
+            <div class="orb-ring ring1"></div>
+            <div class="orb-ring ring2"></div>
+            <div class="orb-core">
+                N
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- STATS -->
+    <section class="stats">
+
+        <div>
+            <strong>2030</strong>
+            <span>VISION</span>
+        </div>
+
+        <div>
+            <strong>50+</strong>
+            <span>CREATIONS</span>
+        </div>
+
+        <div>
+            <strong>4.9★</strong>
+            <span>RATING</span>
+        </div>
+
+        <div>
+            <strong>24/7</strong>
+            <span>EXPERIENCE</span>
+        </div>
+
+    </section>
+
+
+    <!-- MENU -->
+    <section class="menu-section" id="menu">
+
+        <div class="section-heading">
+
+            <p>DISCOVER</p>
+
+            <h2>
+                OUR <span>MENU</span>
+            </h2>
+
+            <div class="category-buttons">
+
+                <button class="active" onclick="filterMenu('all', this)">
+                    All
+                </button>
+
+                <button onclick="filterMenu('main', this)">
+                    Main
+                </button>
+
+                <button onclick="filterMenu('pizza', this)">
+                    Pizza
+                </button>
+
+                <button onclick="filterMenu('drinks', this)">
+                    Drinks
+                </button>
+
+                <button onclick="filterMenu('dessert', this)">
+                    Dessert
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="food-grid">
+
+            <div class="food-card" data-category="main">
+
+                <div class="food-image">
+                    🍜
+                </div>
+
+                <div class="food-info">
+
+                    <span class="food-tag">SIGNATURE</span>
+
+                    <h3>Quantum Ramen</h3>
+
+                    <p>
+                        Miso broth, premium noodles, mushrooms,
+                        truffle oil and crispy garlic.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <strong>₹499</strong>
+
+                        <button onclick="addToCart('Quantum Ramen', 499)">
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="food-card" data-category="pizza">
+
+                <div class="food-image">
+                    🍕
+                </div>
+
+                <div class="food-info">
+
+                    <span class="food-tag">POPULAR</span>
+
+                    <h3>Neon Pizza</h3>
+
+                    <p>
+                        Smoked mozzarella, basil, spicy sauce
+                        and our secret NEXUS seasoning.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <strong>₹599</strong>
+
+                        <button onclick="addToCart('Neon Pizza', 599)">
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="food-card" data-category="main">
+
+                <div class="food-image">
+                    🍔
+                </div>
+
+                <div class="food-info">
+
+                    <span class="food-tag">NEW</span>
+
+                    <h3>Cyber Burger</h3>
+
+                    <p>
+                        Double smash patty, quantum cheese,
+                        caramelized onion and NEXUS sauce.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <strong>₹449</strong>
+
+                        <button onclick="addToCart('Cyber Burger', 449)">
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="food-card" data-category="drinks">
+
+                <div class="food-image">
+                    🥤
+                </div>
+
+                <div class="food-info">
+
+                    <span class="food-tag">SIGNATURE</span>
+
+                    <h3>Galaxy Shake</h3>
+
+                    <p>
+                        Vanilla, blueberry, cosmic syrup
+                        and edible shimmer.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <strong>₹299</strong>
+
+                        <button onclick="addToCart('Galaxy Shake', 299)">
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="food-card" data-category="dessert">
+
+                <div class="food-image">
+                    🍰
+                </div>
+
+                <div class="food-info">
+
+                    <span class="food-tag">DESSERT</span>
+
+                    <h3>Future Cake</h3>
+
+                    <p>
+                        Dark chocolate mousse, vanilla cream
+                        and molten chocolate core.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <strong>₹349</strong>
+
+                        <button onclick="addToCart('Future Cake', 349)">
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="food-card" data-category="drinks">
+
+                <div class="food-image">
+                    🧋
+                </div>
+
+                <div class="food-info">
+
+                    <span class="food-tag">COOL</span>
+
+                    <h3>Cyber Boba</h3>
+
+                    <p>
+                        Passion fruit, lychee, popping pearls
+                        and sparkling ice.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <strong>₹249</strong>
+
+                        <button onclick="addToCart('Cyber Boba', 249)">
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EXPERIENCE -->
+    <section class="experience" id="experience">
+
+        <div class="experience-content">
+
+            <p>NOT JUST FOOD</p>
+
+            <h2>
+                ENTER A NEW
+                <span>DIMENSION.</span>
+            </h2>
+
+            <p>
+                From robotic assistance to interactive tables,
+                every detail has been designed to make dining
+                feel like stepping into the future.
+            </p>
+
+            <div class="features">
+
+                <div>
+                    <span>01</span>
+                    <h3>Smart Tables</h3>
+                    <p>Order directly from your table.</p>
+                </div>
+
+                <div>
+                    <span>02</span>
+                    <h3>AI Kitchen</h3>
+                    <p>Precision cooking technology.</p>
+                </div>
+
+                <div>
+                    <span>03</span>
+                    <h3>Immersive Dining</h3>
+                    <p>Food meets futuristic atmosphere.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BOOKING -->
+    <section class="booking" id="booking">
+
+        <div class="booking-box">
+
+            <p>RESERVE YOUR EXPERIENCE</p>
+
+            <h2>
+                BOOK A <span>TABLE</span>
+            </h2>
+
+            <form onsubmit="bookTable(event)">
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Your Name"
+                    required
+                >
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Email Address"
+                    required
+                >
+
+                <input
+                    type="date"
+                    id="date"
+                    required
+                >
+
+                <select id="people">
+
+                    <option value="2">2 People</option>
+                    <option value="3">3 People</option>
+                    <option value="4">4 People</option>
+                    <option value="5">5 People</option>
+                    <option value="6">6 People</option>
+
+                </select>
+
+                <button type="submit" class="primary-btn">
+                    Confirm Reservation →
+                </button>
+
+            </form>
+
+            <p id="bookingMessage"></p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+
+        <div>
+
+            <p>THE NEXUS STORY</p>
+
+            <h2>
+                FOOD WITHOUT
+                <span>LIMITS.</span>
+            </h2>
+
+        </div>
+
+        <p class="about-text">
+
+            NEXUS was created for people who believe dining
+            should be more than simply eating.
+
+            We combine modern culinary techniques,
+            futuristic technology and immersive design
+            to create an experience you won't forget.
+
+        </p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="logo">
+            NEXUS<span>.</span>
+        </div>
+
+        <p>
+            © 2026 NEXUS Restaurant. The future is delicious.
+        </p>
+
+        <div class="socials">
+            Instagram · YouTube · X
+        </div>
+
+    </footer>
+
+
+    <!-- CART MODAL -->
+    <div class="cart-modal" id="cartModal">
+
+        <div class="cart-box">
+
+            <button class="close" onclick="closeCart()">
+                ×
+            </button>
+
+            <h2>YOUR <span>CART</span></h2>
+
+            <div id="cartItems"></div>
+
+            <div class="cart-total">
+                Total:
+                <strong id="cartTotal">₹0</strong>
+            </div>
+
+            <button class="primary-btn checkout-btn" onclick="checkout()">
+                Checkout →
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+```
